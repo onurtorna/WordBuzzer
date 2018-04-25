@@ -17,9 +17,58 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Word Buzzer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3s-GW-U64">
+                                <rect key="frame" x="138.5" y="120" width="98.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="9wD-pF-uXu">
+                                <rect key="frame" x="112.5" y="210.5" width="150" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGB-55-pHh">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="5lx-Ju-aPq"/>
+                                            <constraint firstAttribute="height" constant="50" id="NGA-FS-xs3"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="didTapStartGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="czo-A6-8Ga"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JFr-Uh-ObW">
+                                        <rect key="frame" x="0.0" y="50" width="150" height="50"/>
+                                        <connections>
+                                            <action selector="didTapHowToPlayButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bUi-DK-pWQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLB-OW-PgI">
+                                <rect key="frame" x="315" y="35" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="cQe-SC-qLY"/>
+                                    <constraint firstAttribute="height" constant="45" id="gBb-DT-ely"/>
+                                </constraints>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9wD-pF-uXu" firstAttribute="top" secondItem="u3s-GW-U64" secondAttribute="bottom" constant="70" id="1aP-l7-pjP"/>
+                            <constraint firstItem="9wD-pF-uXu" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="dEV-PT-qHm"/>
+                            <constraint firstItem="ZLB-OW-PgI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="e4c-15-5yN"/>
+                            <constraint firstItem="u3s-GW-U64" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="jNq-eC-i25"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZLB-OW-PgI" secondAttribute="trailing" constant="15" id="nHF-Mi-wn0"/>
+                            <constraint firstItem="u3s-GW-U64" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="yfe-ee-G15"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="howToPlayButton" destination="JFr-Uh-ObW" id="K8x-FD-0SJ"/>
+                        <outlet property="startGameButton" destination="lGB-55-pHh" id="Ky8-Mz-Kly"/>
+                        <outlet property="switchLanguageButton" destination="ZLB-OW-PgI" id="6np-UC-Z4c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

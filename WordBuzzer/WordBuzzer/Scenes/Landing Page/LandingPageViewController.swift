@@ -10,16 +10,29 @@ import UIKit
 
 class LandingPageViewController: UIViewController {
 
+    @IBOutlet private weak var startGameButton: UIButton!
+    @IBOutlet private weak var howToPlayButton: UIButton!
+    @IBOutlet private weak var switchLanguageButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        configureViews()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    private func configureViews() {
+        // TODO: To be implemented
     }
-
-
 }
 
+// MARK: - Actions
+extension LandingPageViewController {
+
+    @IBAction private func didTapHowToPlayButton(_ sender: UIButton) {
+        // TODO: To be implemented
+    }
+
+    @IBAction private func didTapStartGameButton(_ sender: UIButton) {
+        // TODO: To be implemented
+    }
+}
