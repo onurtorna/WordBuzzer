@@ -17,6 +17,7 @@
 		0C50A17120909AB500502751 /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C50A17020909AB500502751 /* LocalizationManager.swift */; };
 		0C50A17820909D0E00502751 /* StringTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C50A17720909D0E00502751 /* StringTable.swift */; };
 		0C50A18420909F5900502751 /* LandingPage.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C50A18620909F5900502751 /* LandingPage.strings */; };
+		0C50A1902090A65B00502751 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C50A18F2090A65B00502751 /* Word.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		0C50A17720909D0E00502751 /* StringTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTable.swift; sourceTree = "<group>"; };
 		0C50A18520909F5900502751 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LandingPage.strings; sourceTree = "<group>"; };
 		0C50A18720909F5B00502751 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LandingPage.strings; sourceTree = "<group>"; };
+		0C50A18F2090A65B00502751 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				0C50A13D2090923D00502751 /* AppDelegate.swift */,
+				0C50A18E2090A64E00502751 /* Model */,
 				0C50A16D2090958A00502751 /* Localization */,
 				0C50A16E2090958F00502751 /* Resources */,
 				0C50A16C2090958300502751 /* Scenes */,
@@ -173,6 +176,14 @@
 				0C50A13F2090923D00502751 /* LandingPageViewController.swift */,
 			);
 			path = "Landing Page";
+			sourceTree = "<group>";
+		};
+		0C50A18E2090A64E00502751 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0C50A18F2090A65B00502751 /* Word.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C50A1402090923D00502751 /* LandingPageViewController.swift in Sources */,
+				0C50A1902090A65B00502751 /* Word.swift in Sources */,
 				0C50A17120909AB500502751 /* LocalizationManager.swift in Sources */,
 				0C50A13E2090923D00502751 /* AppDelegate.swift in Sources */,
 				0C50A17820909D0E00502751 /* StringTable.swift in Sources */,
