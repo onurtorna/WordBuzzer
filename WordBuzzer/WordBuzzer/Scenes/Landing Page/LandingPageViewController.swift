@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LandingPageViewController.swift
 //  WordBuzzer
 //
 //  Created by Onur Torna on 25/04/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LandingPageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

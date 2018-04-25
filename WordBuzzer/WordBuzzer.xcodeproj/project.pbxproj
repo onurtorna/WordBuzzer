@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0C50A13E2090923D00502751 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C50A13D2090923D00502751 /* AppDelegate.swift */; };
-		0C50A1402090923D00502751 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C50A13F2090923D00502751 /* ViewController.swift */; };
+		0C50A1402090923D00502751 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C50A13F2090923D00502751 /* LandingPageViewController.swift */; };
 		0C50A1432090923D00502751 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C50A1412090923D00502751 /* Main.storyboard */; };
 		0C50A1452090923F00502751 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C50A1442090923F00502751 /* Assets.xcassets */; };
 		0C50A1482090923F00502751 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C50A1462090923F00502751 /* LaunchScreen.storyboard */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		0C50A13A2090923D00502751 /* WordBuzzer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordBuzzer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C50A13D2090923D00502751 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0C50A13F2090923D00502751 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0C50A13F2090923D00502751 /* LandingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
 		0C50A1422090923D00502751 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0C50A1442090923F00502751 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C50A1472090923F00502751 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,11 +98,10 @@
 			isa = PBXGroup;
 			children = (
 				0C50A13D2090923D00502751 /* AppDelegate.swift */,
-				0C50A13F2090923D00502751 /* ViewController.swift */,
-				0C50A1412090923D00502751 /* Main.storyboard */,
-				0C50A1442090923F00502751 /* Assets.xcassets */,
-				0C50A1462090923F00502751 /* LaunchScreen.storyboard */,
-				0C50A1492090923F00502751 /* Info.plist */,
+				0C50A16D2090958A00502751 /* Localization */,
+				0C50A16E2090958F00502751 /* Resources */,
+				0C50A16C2090958300502751 /* Scenes */,
+				0C50A16B2090957500502751 /* Storyboards */,
 			);
 			path = WordBuzzer;
 			sourceTree = "<group>";
@@ -123,6 +122,47 @@
 				0C50A15F2090923F00502751 /* Info.plist */,
 			);
 			path = WordBuzzerUITests;
+			sourceTree = "<group>";
+		};
+		0C50A16B2090957500502751 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				0C50A1412090923D00502751 /* Main.storyboard */,
+				0C50A1462090923F00502751 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		0C50A16C2090958300502751 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				0C50A16F2090965000502751 /* Landing Page */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		0C50A16D2090958A00502751 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		0C50A16E2090958F00502751 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0C50A1442090923F00502751 /* Assets.xcassets */,
+				0C50A1492090923F00502751 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0C50A16F2090965000502751 /* Landing Page */ = {
+			isa = PBXGroup;
+			children = (
+				0C50A13F2090923D00502751 /* LandingPageViewController.swift */,
+			);
+			path = "Landing Page";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C50A1402090923D00502751 /* ViewController.swift in Sources */,
+				0C50A1402090923D00502751 /* LandingPageViewController.swift in Sources */,
 				0C50A13E2090923D00502751 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,7 +472,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BGSGVDNYY7;
-				INFOPLIST_FILE = WordBuzzer/Info.plist;
+				INFOPLIST_FILE = WordBuzzer/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -451,7 +491,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BGSGVDNYY7;
-				INFOPLIST_FILE = WordBuzzer/Info.plist;
+				INFOPLIST_FILE = WordBuzzer/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
