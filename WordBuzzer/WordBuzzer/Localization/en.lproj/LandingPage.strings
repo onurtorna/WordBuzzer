@@ -1,0 +1,11 @@
+/* 
+  LandingPage.strings
+  WordBuzzer
+
+  Created by Onur Torna on 25/04/18.
+  Copyright © 2018 Onur Torna. All rights reserved.
+*/
+
+"language" = "EN";
+"startGame" = "Start the Game";
+"howToPlay" = "How To Play";
