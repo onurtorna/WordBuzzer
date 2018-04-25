@@ -22,6 +22,14 @@ class LandingPageViewController: UIViewController {
 
     private func configureViews() {
         // TODO: To be implemented
+
+        setTitlesForViews()
+    }
+
+    private func setTitlesForViews() {
+        switchLanguageButton.setTitle(StringTable.landingPage.localized(key: "language"), for: .normal)
+        howToPlayButton.setTitle(StringTable.landingPage.localized(key: "howToPlay"), for: .normal)
+        startGameButton.setTitle(StringTable.landingPage.localized(key: "startGame"), for: .normal)
     }
 }
 
@@ -34,5 +42,10 @@ extension LandingPageViewController {
 
     @IBAction private func didTapStartGameButton(_ sender: UIButton) {
         // TODO: To be implemented
+    }
+
+    @IBAction private func switchLanguageButtonTapped(_ sender: UIButton) {
+        LocalizationManager.shared.switchLanguage()
+        setTitlesForViews()
     }
 }
