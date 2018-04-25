@@ -21,6 +21,7 @@
 		0C50A18D2090A63900502751 /* WordGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C50A18C2090A63900502751 /* WordGenerator.swift */; };
 		0C50A1902090A65B00502751 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C50A18F2090A65B00502751 /* Word.swift */; };
 		0C50A1922090A9FD00502751 /* LanguageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C50A1912090A9FD00502751 /* LanguageKey.swift */; };
+		0C50A1942090AEAC00502751 /* FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C50A1932090AEAC00502751 /* FileReader.swift */; };
 		0C50A1962090B00600502751 /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = 0C50A1952090B00600502751 /* words.json */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		0C50A18C2090A63900502751 /* WordGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordGenerator.swift; sourceTree = "<group>"; };
 		0C50A18F2090A65B00502751 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		0C50A1912090A9FD00502751 /* LanguageKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageKey.swift; sourceTree = "<group>"; };
+		0C50A1932090AEAC00502751 /* FileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReader.swift; sourceTree = "<group>"; };
 		0C50A1952090B00600502751 /* words.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,6 +194,7 @@
 		0C50A18B2090A62500502751 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				0C50A1932090AEAC00502751 /* FileReader.swift */,
 				0C50A1912090A9FD00502751 /* LanguageKey.swift */,
 				0C50A18C2090A63900502751 /* WordGenerator.swift */,
 			);
@@ -343,6 +346,7 @@
 				0C50A1402090923D00502751 /* LandingPageViewController.swift in Sources */,
 				0C50A1922090A9FD00502751 /* LanguageKey.swift in Sources */,
 				0C50A1902090A65B00502751 /* Word.swift in Sources */,
+				0C50A1942090AEAC00502751 /* FileReader.swift in Sources */,
 				0C50A17120909AB500502751 /* LocalizationManager.swift in Sources */,
 				0C50A13E2090923D00502751 /* AppDelegate.swift in Sources */,
 				0C50A18D2090A63900502751 /* WordGenerator.swift in Sources */,
