@@ -10,6 +10,7 @@ import Foundation
 
 enum StringTable: String {
 
+    case commons = "Commons"
     case landingPage = "LandingPage"
 
     /// Returns localized key with the current selected app language
@@ -23,7 +24,8 @@ enum StringTable: String {
         return NSLocalizedString(key,
                                  tableName: rawValue,
                                  bundle: LocalizationManager.shared.bundle,
-                                 value: key, comment: "")
+                                 value: key,
+                                 comment: "")
     }
 
     /// Localizes and formats given String with arguments

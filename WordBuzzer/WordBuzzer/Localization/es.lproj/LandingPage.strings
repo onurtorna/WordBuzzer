@@ -9,3 +9,5 @@
 "language" = "ES";
 "startGame" = "Comenzar el juego";
 "howToPlay" = "Cómo Jugar";
+"players" = "Jugadores:";
+"rounds" = "Rondas:";

@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C3A3A7F2091AA8800940D7E /* SettingsSelectorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C3A3A7E2091AA8800940D7E /* SettingsSelectorView.xib */; };
+		0C3A3A812091AA9C00940D7E /* SettingsSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3A3A802091AA9C00940D7E /* SettingsSelectorView.swift */; };
 		0C3A3A842091AFA700940D7E /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3A3A832091AFA700940D7E /* NibLoadable.swift */; };
 		0C3A3A872091B0C200940D7E /* UIView+LayoutConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3A3A862091B0C200940D7E /* UIView+LayoutConstraints.swift */; };
+		0C3A3A8B2091BA0B00940D7E /* SettingsSelectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3A3A8A2091BA0B00940D7E /* SettingsSelectorViewModel.swift */; };
+		0C3A3A932091E96A00940D7E /* Commons.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C3A3A952091E96A00940D7E /* Commons.strings */; };
 		0C50A13E2090923D00502751 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C50A13D2090923D00502751 /* AppDelegate.swift */; };
 		0C50A1402090923D00502751 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C50A13F2090923D00502751 /* LandingPageViewController.swift */; };
 		0C50A1432090923D00502751 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C50A1412090923D00502751 /* Main.storyboard */; };
@@ -45,8 +49,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C3A3A7E2091AA8800940D7E /* SettingsSelectorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsSelectorView.xib; sourceTree = "<group>"; };
+		0C3A3A802091AA9C00940D7E /* SettingsSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSelectorView.swift; sourceTree = "<group>"; };
 		0C3A3A832091AFA700940D7E /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		0C3A3A862091B0C200940D7E /* UIView+LayoutConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LayoutConstraints.swift"; sourceTree = "<group>"; };
+		0C3A3A8A2091BA0B00940D7E /* SettingsSelectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSelectorViewModel.swift; sourceTree = "<group>"; };
+		0C3A3A962091E96B00940D7E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Commons.strings; sourceTree = "<group>"; };
+		0C3A3A972091E98900940D7E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Commons.strings; sourceTree = "<group>"; };
 		0C50A13A2090923D00502751 /* WordBuzzer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordBuzzer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C50A13D2090923D00502751 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C50A13F2090923D00502751 /* LandingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +120,16 @@
 				0C3A3A862091B0C200940D7E /* UIView+LayoutConstraints.swift */,
 			);
 			path = Additions;
+			sourceTree = "<group>";
+		};
+		0C3A3A882091B64500940D7E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0C3A3A7E2091AA8800940D7E /* SettingsSelectorView.xib */,
+				0C3A3A802091AA9C00940D7E /* SettingsSelectorView.swift */,
+				0C3A3A8A2091BA0B00940D7E /* SettingsSelectorViewModel.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		0C50A1312090923D00502751 = {
@@ -190,6 +209,7 @@
 			children = (
 				0C50A17020909AB500502751 /* LocalizationManager.swift */,
 				0C50A17720909D0E00502751 /* StringTable.swift */,
+				0C3A3A952091E96A00940D7E /* Commons.strings */,
 				0C50A18620909F5900502751 /* LandingPage.strings */,
 			);
 			path = Localization;
@@ -209,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				0C50A13F2090923D00502751 /* LandingPageViewController.swift */,
+				0C3A3A882091B64500940D7E /* Views */,
 			);
 			path = "Landing Page";
 			sourceTree = "<group>";
@@ -340,7 +361,9 @@
 				0C50A1452090923F00502751 /* Assets.xcassets in Resources */,
 				0C50A1432090923D00502751 /* Main.storyboard in Resources */,
 				0C50A18420909F5900502751 /* LandingPage.strings in Resources */,
+				0C3A3A932091E96A00940D7E /* Commons.strings in Resources */,
 				0C50A1962090B00600502751 /* words.json in Resources */,
+				0C3A3A7F2091AA8800940D7E /* SettingsSelectorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +390,7 @@
 			files = (
 				0C50A1402090923D00502751 /* LandingPageViewController.swift in Sources */,
 				0C50A1922090A9FD00502751 /* LanguageKey.swift in Sources */,
+				0C3A3A812091AA9C00940D7E /* SettingsSelectorView.swift in Sources */,
 				0C50A1902090A65B00502751 /* Word.swift in Sources */,
 				0C50A1942090AEAC00502751 /* FileReader.swift in Sources */,
 				0C3A3A842091AFA700940D7E /* NibLoadable.swift in Sources */,
@@ -374,6 +398,7 @@
 				0C50A13E2090923D00502751 /* AppDelegate.swift in Sources */,
 				0C50A18D2090A63900502751 /* WordGenerator.swift in Sources */,
 				0C50A18A2090A52B00502751 /* Global.swift in Sources */,
+				0C3A3A8B2091BA0B00940D7E /* SettingsSelectorViewModel.swift in Sources */,
 				0C50A17820909D0E00502751 /* StringTable.swift in Sources */,
 				0C3A3A872091B0C200940D7E /* UIView+LayoutConstraints.swift in Sources */,
 			);
@@ -411,6 +436,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0C3A3A952091E96A00940D7E /* Commons.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0C3A3A962091E96B00940D7E /* en */,
+				0C3A3A972091E98900940D7E /* es */,
+			);
+			name = Commons.strings;
+			sourceTree = "<group>";
+		};
 		0C50A1412090923D00502751 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="SettingsSelectorView" id="iN0-l3-epB" customClass="SettingsSelectorView" customModule="WordBuzzer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iOI-ls-3mL">
+                    <rect key="frame" x="50" y="268.5" width="275" height="150"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="k7v-2U-4Y5">
+                            <rect key="frame" x="0.0" y="0.0" width="275" height="100"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b07-WL-Bo8">
+                                    <rect key="frame" x="0.0" y="0.0" width="275" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="63J-yJ-axN"/>
+                                    </constraints>
+                                    <state key="normal" title="Player Count Select"/>
+                                    <connections>
+                                        <action selector="playerCountSelectButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="vw5-DN-1Iy"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1z-Jz-1BD">
+                                    <rect key="frame" x="0.0" y="50" width="275" height="50"/>
+                                    <state key="normal" title="Round Select"/>
+                                    <connections>
+                                        <action selector="roundCountSelectButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="Cyk-i9-Rcv"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21W-yU-pbT">
+                            <rect key="frame" x="0.0" y="100" width="137.5" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="Nqm-vc-Ehq"/>
+                            </constraints>
+                            <state key="normal" title="Cancel"/>
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="ZJi-eC-yCj"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whM-52-chg">
+                            <rect key="frame" x="137.5" y="100" width="137.5" height="50"/>
+                            <state key="normal" title="Start"/>
+                            <connections>
+                                <action selector="startButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="PpM-0U-pRL"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="k7v-2U-4Y5" firstAttribute="top" secondItem="iOI-ls-3mL" secondAttribute="top" id="1jV-IE-LoM"/>
+                        <constraint firstAttribute="bottom" secondItem="21W-yU-pbT" secondAttribute="bottom" id="5dw-Mi-SC2"/>
+                        <constraint firstAttribute="trailing" secondItem="whM-52-chg" secondAttribute="trailing" id="CuL-8K-7J8"/>
+                        <constraint firstItem="k7v-2U-4Y5" firstAttribute="leading" secondItem="iOI-ls-3mL" secondAttribute="leading" id="GHO-64-hJh"/>
+                        <constraint firstItem="21W-yU-pbT" firstAttribute="top" secondItem="k7v-2U-4Y5" secondAttribute="bottom" id="Q0b-Lf-LAz"/>
+                        <constraint firstItem="21W-yU-pbT" firstAttribute="leading" secondItem="iOI-ls-3mL" secondAttribute="leading" id="Qui-Zx-bOP"/>
+                        <constraint firstItem="whM-52-chg" firstAttribute="leading" secondItem="21W-yU-pbT" secondAttribute="trailing" id="SR5-ak-isV"/>
+                        <constraint firstAttribute="trailing" secondItem="k7v-2U-4Y5" secondAttribute="trailing" id="Yvm-rN-HRk"/>
+                        <constraint firstItem="whM-52-chg" firstAttribute="top" secondItem="21W-yU-pbT" secondAttribute="top" id="c3e-aw-NSF"/>
+                        <constraint firstItem="whM-52-chg" firstAttribute="height" secondItem="21W-yU-pbT" secondAttribute="height" id="h4q-md-4bb"/>
+                        <constraint firstItem="whM-52-chg" firstAttribute="width" secondItem="21W-yU-pbT" secondAttribute="width" id="rLQ-Np-K1n"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="iOI-ls-3mL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="JwY-8Y-Owe"/>
+                <constraint firstItem="iOI-ls-3mL" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="RmH-UW-4oe"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="iOI-ls-3mL" secondAttribute="trailing" constant="50" id="RqR-e2-xsr"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="cancelButton" destination="21W-yU-pbT" id="Pf7-1u-WEi"/>
+                <outlet property="playerCountSelectButton" destination="b07-WL-Bo8" id="MLS-WT-sEc"/>
+                <outlet property="roundCountSelectButton" destination="P1z-Jz-1BD" id="3eB-gE-hH8"/>
+                <outlet property="startButton" destination="whM-52-chg" id="ekh-rS-gGR"/>
+            </connections>
+            <point key="canvasLocation" x="-137.5" y="51.5"/>
+        </view>
+    </objects>
+</document>

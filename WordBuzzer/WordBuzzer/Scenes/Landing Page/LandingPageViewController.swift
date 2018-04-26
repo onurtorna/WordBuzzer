@@ -41,7 +41,7 @@ extension LandingPageViewController {
     }
 
     @IBAction private func didTapStartGameButton(_ sender: UIButton) {
-        // TODO: To be implemented
+        settingsView = SettingsSelectorView.show(in: self)
     }
 
     @IBAction private func switchLanguageButtonTapped(_ sender: UIButton) {
