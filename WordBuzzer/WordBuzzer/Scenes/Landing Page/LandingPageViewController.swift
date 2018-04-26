@@ -14,6 +14,9 @@ class LandingPageViewController: UIViewController {
     @IBOutlet private weak var howToPlayButton: UIButton!
     @IBOutlet private weak var switchLanguageButton: UIButton!
 
+    /// Settings view to be shown to customers
+    private var settingsView: SettingsSelectorView?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -47,5 +50,19 @@ extension LandingPageViewController {
     @IBAction private func switchLanguageButtonTapped(_ sender: UIButton) {
         LocalizationManager.shared.switchLanguage()
         setTitlesForViews()
+    }
+}
+
+// MARK: - SettingsSelectorViewDelegate
+extension LandingPageViewController: SettingsSelectorViewDelegate {
+
+    func startGame(playerCount: Int, roundCount: Int) {
+        let viewController = GameViewController.loadFromStoryboard()
+        let viewModel = GameViewModel(playerCount: playerCount,
+                                      totalRoundCount: roundCount)
+        viewController.viewModel = viewModel
+        present(viewController, animated: true) {
+            self.settingsView?.dismiss()
+        }
     }
 }
