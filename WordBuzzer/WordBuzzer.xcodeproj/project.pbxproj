@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C3A3A842091AFA700940D7E /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3A3A832091AFA700940D7E /* NibLoadable.swift */; };
 		0C50A13E2090923D00502751 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C50A13D2090923D00502751 /* AppDelegate.swift */; };
 		0C50A1402090923D00502751 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C50A13F2090923D00502751 /* LandingPageViewController.swift */; };
 		0C50A1432090923D00502751 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C50A1412090923D00502751 /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C3A3A832091AFA700940D7E /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		0C50A13A2090923D00502751 /* WordBuzzer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordBuzzer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C50A13D2090923D00502751 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C50A13F2090923D00502751 /* LandingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C3A3A822091AF9200940D7E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0C3A3A832091AFA700940D7E /* NibLoadable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		0C50A1312090923D00502751 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +131,7 @@
 				0C50A18E2090A64E00502751 /* Model */,
 				0C50A16D2090958A00502751 /* Localization */,
 				0C50A16E2090958F00502751 /* Resources */,
+				0C3A3A822091AF9200940D7E /* Protocols */,
 				0C50A16C2090958300502751 /* Scenes */,
 				0C50A16B2090957500502751 /* Storyboards */,
 				0C50A18B2090A62500502751 /* Util */,
@@ -347,6 +358,7 @@
 				0C50A1922090A9FD00502751 /* LanguageKey.swift in Sources */,
 				0C50A1902090A65B00502751 /* Word.swift in Sources */,
 				0C50A1942090AEAC00502751 /* FileReader.swift in Sources */,
+				0C3A3A842091AFA700940D7E /* NibLoadable.swift in Sources */,
 				0C50A17120909AB500502751 /* LocalizationManager.swift in Sources */,
 				0C50A13E2090923D00502751 /* AppDelegate.swift in Sources */,
 				0C50A18D2090A63900502751 /* WordGenerator.swift in Sources */,
