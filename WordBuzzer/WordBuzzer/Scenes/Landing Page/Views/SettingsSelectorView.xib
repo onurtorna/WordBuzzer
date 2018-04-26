@@ -17,10 +17,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iOI-ls-3mL">
-                    <rect key="frame" x="50" y="268.5" width="275" height="150"/>
+                    <rect key="frame" x="50" y="243.5" width="275" height="200"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="k7v-2U-4Y5">
-                            <rect key="frame" x="0.0" y="0.0" width="275" height="100"/>
+                            <rect key="frame" x="0.0" y="0.0" width="275" height="150"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b07-WL-Bo8">
                                     <rect key="frame" x="0.0" y="0.0" width="275" height="50"/>
@@ -32,8 +32,15 @@
                                         <action selector="playerCountSelectButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="vw5-DN-1Iy"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1z-Jz-1BD">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHf-oM-mSz">
                                     <rect key="frame" x="0.0" y="50" width="275" height="50"/>
+                                    <state key="normal" title="Language Select"/>
+                                    <connections>
+                                        <action selector="languageSelectButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="JQz-We-OAO"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1z-Jz-1BD">
+                                    <rect key="frame" x="0.0" y="100" width="275" height="50"/>
                                     <state key="normal" title="Round Select"/>
                                     <connections>
                                         <action selector="roundCountSelectButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="Cyk-i9-Rcv"/>
@@ -42,7 +49,7 @@
                             </subviews>
                         </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21W-yU-pbT">
-                            <rect key="frame" x="0.0" y="100" width="137.5" height="50"/>
+                            <rect key="frame" x="0.0" y="150" width="137.5" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="Nqm-vc-Ehq"/>
                             </constraints>
@@ -52,7 +59,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whM-52-chg">
-                            <rect key="frame" x="137.5" y="100" width="137.5" height="50"/>
+                            <rect key="frame" x="137.5" y="150" width="137.5" height="50"/>
                             <state key="normal" title="Start"/>
                             <connections>
                                 <action selector="startButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="PpM-0U-pRL"/>
@@ -84,6 +91,7 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="cancelButton" destination="21W-yU-pbT" id="Pf7-1u-WEi"/>
+                <outlet property="languageSelectButton" destination="kHf-oM-mSz" id="174-mh-GSq"/>
                 <outlet property="playerCountSelectButton" destination="b07-WL-Bo8" id="MLS-WT-sEc"/>
                 <outlet property="roundCountSelectButton" destination="P1z-Jz-1BD" id="3eB-gE-hH8"/>
                 <outlet property="startButton" destination="whM-52-chg" id="ekh-rS-gGR"/>

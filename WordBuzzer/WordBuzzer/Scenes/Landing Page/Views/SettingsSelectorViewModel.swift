@@ -13,6 +13,7 @@ final class SettingsSelectorState {
     enum Change {
         case playerCountChanged(Int)
         case roundCountChanged(Int)
+        case languageChanged((questionLanguage: LanguageKey, answerLanguage: LanguageKey))
         case gameStarted(Int, Int)
     }
 
@@ -21,6 +22,10 @@ final class SettingsSelectorState {
 
     /// Possible round count list
     private var roundCountList = [5, 10, 15, 20]
+
+    /// Possible language pair tupples
+    private var languageList: [(LanguageKey, LanguageKey)] = [(.englishKey, .spanishKey),
+                                                                (.spanishKey, .englishKey)]
 
     /// Change closure
     var onChange: ((SettingsSelectorState.Change) -> Void)?
@@ -39,6 +44,14 @@ final class SettingsSelectorState {
         }
     }
 
+    /// Selected languages
+    private var selectedLanguage: (LanguageKey, LanguageKey) = (.englishKey, .spanishKey) {
+        didSet {
+            onChange?(.languageChanged((questionLanguage: selectedLanguage.0,
+                                        answerLanguage: selectedLanguage.1)))
+        }
+    }
+
     /// Selected player count index in the player count list
     var selectedPlayerCountIndex: Int = 0 {
         didSet {
@@ -53,6 +66,13 @@ final class SettingsSelectorState {
         }
     }
 
+    /// Selected language pair index in the language tupple list
+    var selectedLanguageIndex: Int = 0 {
+        didSet {
+            selectedLanguage = languageList[selectedLanguageIndex]
+        }
+    }
+
     /// Player count list size
     var playerCountListCount: Int {
         return playerCountList.count
@@ -61,6 +81,10 @@ final class SettingsSelectorState {
     /// Round count list size
     var roundCountListCount: Int {
         return roundCountList.count
+    }
+
+    var languageListCount: Int {
+        return languageList.count
     }
 
 }
@@ -101,6 +125,15 @@ final class SettingsSelectorViewModel {
         }
     }
 
+    func updateLanguageSelection() {
+
+        if state.selectedLanguageIndex == state.languageListCount - 1 {
+            state.selectedLanguageIndex = 0
+        } else {
+            state.selectedLanguageIndex += 1
+        }
+    }
+
     /// Starts the game
     func startGame() {
         stateChangeHandler?(.gameStarted(state.selectedPlayerCountIndex,
@@ -112,5 +145,6 @@ final class SettingsSelectorViewModel {
     private func publishInitial() {
         state.selectedPlayerCountIndex = 0
         state.selectedRoundCountIndex = 0
+        state.selectedLanguageIndex = 0
     }
 }

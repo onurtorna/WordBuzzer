@@ -13,4 +13,13 @@ import Foundation
 enum LanguageKey: String {
     case englishKey = "text_eng"
     case spanishKey = "text_spa"
+
+    var localizationKey: String {
+        switch self {
+        case .englishKey:
+            return "english"
+        case .spanishKey:
+            return "spanish"
+        }
+    }
 }

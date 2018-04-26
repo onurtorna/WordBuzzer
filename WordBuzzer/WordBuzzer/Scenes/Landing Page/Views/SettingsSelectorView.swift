@@ -14,6 +14,7 @@ protocol SettingsSelectorViewDelegate {
 
 final class SettingsSelectorView: UIView, NibLoadable {
 
+    @IBOutlet weak var languageSelectButton: UIButton!
     @IBOutlet private weak var playerCountSelectButton: UIButton!
     @IBOutlet private weak var roundCountSelectButton: UIButton!
     @IBOutlet private weak var cancelButton: UIButton!
@@ -52,9 +53,18 @@ final class SettingsSelectorView: UIView, NibLoadable {
         case .playerCountChanged(let playerCount):
             let title = StringTable.landingPage.localized(key: "players") + " \(playerCount)"
             playerCountSelectButton.setTitle(title, for: .normal)
+
         case .roundCountChanged(let roundCount):
             let title = StringTable.landingPage.localized(key: "rounds") + " \(roundCount)"
             roundCountSelectButton.setTitle(title, for: .normal)
+
+        case .languageChanged(questionLanguage: let questionLanguage,
+                              answerLanguage: let answerLanguage):
+            let title = StringTable.commons.localized(key: questionLanguage.localizationKey)
+                + " -> "
+                + StringTable.commons.localized(key: answerLanguage.localizationKey)
+            languageSelectButton.setTitle(title, for: .normal)
+
         case .gameStarted(let playerCount,
                           let roundCount):
             delegate?.startGame(playerCount: playerCount,
@@ -73,6 +83,10 @@ final class SettingsSelectorView: UIView, NibLoadable {
 
     @IBAction private func roundCountSelectButtonTapped(_ sender: Any) {
         viewModel.updateRoundCount()
+    }
+    
+    @IBAction func languageSelectButtonTapped(_ sender: Any) {
+        viewModel.updateLanguageSelection()
     }
 
     @IBAction private func cancelButtonTapped(_ sender: Any) {
