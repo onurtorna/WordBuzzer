@@ -57,6 +57,13 @@ class GameViewController: UIViewController, StoryboardLoadable {
 
 }
 
+// MARK: - WordLabelDelegate
+extension GameViewController: WordLabelDelegate {
+    func animationEnded() {
+        // TODO: To be implemented
+    }
+}
+
 // MARK: - Actions
 extension GameViewController {
     // TODO: To be implemented
