@@ -30,7 +30,10 @@ class GameViewController: UIViewController, StoryboardLoadable {
 
     /// View model
     var viewModel: GameViewModel!
-    var wordLabel: WordLabel?
+
+    /// Current shown possible answer label
+    private var wordLabel: WordLabel?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -78,6 +81,8 @@ class GameViewController: UIViewController, StoryboardLoadable {
 
     private func configureViews() {
         // TODO: To be implemented
+        pauseButton.setTitle(StringTable.commons.localized(key: "pause"),
+                             for: .normal)
         ButtonCustomizer.applyBuzzerStyleTo(button: playerOneBuzzerButton,
                                             color: UIColor.red)
         ButtonCustomizer.applyBuzzerStyleTo(button: playerTwoBuzzerButton,
@@ -105,9 +110,35 @@ extension GameViewController {
 
     @IBAction private func playerTwoBuzzerButtonTapped(_ sender: Any) {
     }
+
     @IBAction private func playerThreeBuzzerButtonTapped(_ sender: Any) {
     }
 
     @IBAction private func playerFourBuzzerButtonTapped(_ sender: Any) {
+        
     }
+
+    @IBAction private func pauseButtonTapped(_ sender: Any) {
+
+        wordLabel?.layer.pause()
+        let alertController = UIAlertController.init(title: StringTable.game.localized(key: "gamePaused"),
+                                                     message: "",
+                                                     preferredStyle: .alert)
+
+        let resumeAction = UIAlertAction(title: StringTable.game.localized(key: "resume"),
+                                         style: .default) { (_) in
+                                            self.wordLabel?.layer.resume()
+        }
+
+        let exitAction = UIAlertAction(title: StringTable.game.localized(key: "exitGame"),
+                                       style: .destructive) { (_) in
+                                        self.dismiss(animated: true,
+                                                     completion: nil)
+        }
+
+        alertController.addAction(resumeAction)
+        alertController.addAction(exitAction)
+        show(alertController, sender: nil)
+    }
+    
 }

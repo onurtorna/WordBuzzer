@@ -1,0 +1,11 @@
+/* 
+  Game.strings
+  WordBuzzer
+
+  Created by Onur Torna on 29/04/18.
+  Copyright © 2018 Onur Torna. All rights reserved.
+*/
+
+"exitGame" = "Exit Game";
+"resume" = "Resume";
+"gamePaused" = "The Game is Paused";

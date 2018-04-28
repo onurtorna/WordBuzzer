@@ -11,6 +11,7 @@ import Foundation
 enum StringTable: String {
 
     case commons = "Commons"
+    case game = "Game"
     case landingPage = "LandingPage"
 
     /// Returns localized key with the current selected app language

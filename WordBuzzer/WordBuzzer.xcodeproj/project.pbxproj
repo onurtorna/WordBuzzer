@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C269717209519A0004FF189 /* CALayer+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C269716209519A0004FF189 /* CALayer+Animation.swift */; };
 		0C26971A20952DF4004FF189 /* ButtonCustomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C26971920952DF4004FF189 /* ButtonCustomizer.swift */; };
+		0C26971D209534C7004FF189 /* Game.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C26971F209534C7004FF189 /* Game.strings */; };
 		0C2A56A32092EC5200D6C144 /* WordLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2A56A22092EC5200D6C144 /* WordLabel.swift */; };
 		0C3A3A7F2091AA8800940D7E /* SettingsSelectorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C3A3A7E2091AA8800940D7E /* SettingsSelectorView.xib */; };
 		0C3A3A812091AA9C00940D7E /* SettingsSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3A3A802091AA9C00940D7E /* SettingsSelectorView.swift */; };
@@ -54,7 +56,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C269716209519A0004FF189 /* CALayer+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Animation.swift"; sourceTree = "<group>"; };
 		0C26971920952DF4004FF189 /* ButtonCustomizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCustomizer.swift; sourceTree = "<group>"; };
+		0C26971E209534C7004FF189 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Game.strings; sourceTree = "<group>"; };
+		0C269720209534C9004FF189 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Game.strings; sourceTree = "<group>"; };
 		0C2A56A22092EC5200D6C144 /* WordLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordLabel.swift; sourceTree = "<group>"; };
 		0C3A3A7E2091AA8800940D7E /* SettingsSelectorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsSelectorView.xib; sourceTree = "<group>"; };
 		0C3A3A802091AA9C00940D7E /* SettingsSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSelectorView.swift; sourceTree = "<group>"; };
@@ -144,6 +149,7 @@
 		0C3A3A852091B09900940D7E /* Additions */ = {
 			isa = PBXGroup;
 			children = (
+				0C269716209519A0004FF189 /* CALayer+Animation.swift */,
 				0C3A3A862091B0C200940D7E /* UIView+LayoutConstraints.swift */,
 			);
 			path = Additions;
@@ -250,6 +256,7 @@
 				0C50A17720909D0E00502751 /* StringTable.swift */,
 				0C3A3A952091E96A00940D7E /* Commons.strings */,
 				0C50A18620909F5900502751 /* LandingPage.strings */,
+				0C26971F209534C7004FF189 /* Game.strings */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -402,6 +409,7 @@
 				0C50A18420909F5900502751 /* LandingPage.strings in Resources */,
 				0C3A3A932091E96A00940D7E /* Commons.strings in Resources */,
 				0C50A1962090B00600502751 /* words.json in Resources */,
+				0C26971D209534C7004FF189 /* Game.strings in Resources */,
 				0C3A3A7F2091AA8800940D7E /* SettingsSelectorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +441,7 @@
 				0C50A1922090A9FD00502751 /* LanguageKey.swift in Sources */,
 				0C2A56A32092EC5200D6C144 /* WordLabel.swift in Sources */,
 				0C3A3A902091E71A00940D7E /* GameViewModel.swift in Sources */,
+				0C269717209519A0004FF189 /* CALayer+Animation.swift in Sources */,
 				0C26971A20952DF4004FF189 /* ButtonCustomizer.swift in Sources */,
 				0C3A3A812091AA9C00940D7E /* SettingsSelectorView.swift in Sources */,
 				0C50A1902090A65B00502751 /* Word.swift in Sources */,
@@ -480,6 +489,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0C26971F209534C7004FF189 /* Game.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0C26971E209534C7004FF189 /* en */,
+				0C269720209534C9004FF189 /* es */,
+			);
+			name = Game.strings;
+			sourceTree = "<group>";
+		};
 		0C3A3A952091E96A00940D7E /* Commons.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
