@@ -104,4 +104,48 @@ class GameViewModel {
                                                             answerLanguage: state.answerLanguage)
         }
     }
+
+    func startNewRoundIfPossible() {
+
+        guard state.remainingRoundCount - 1 > 0,
+            let wordList = state.wordList
+            else {
+                endGame()
+                return
+        }
+
+        state.remainingRoundCount -= 1
+        state.currentQuestionWord = WordGenerator.generateWord(from: wordList,
+                                                               excluding: state.askedWordIndexList)
+        if let currentQuestionWord = state.currentQuestionWord,
+            let currentQuestionWordIndex = wordList.index(of: currentQuestionWord) {
+            state.askedWordIndexList.append(currentQuestionWordIndex)
+            var decoyList = WordGenerator.generateWordList(from: wordList,
+                                                           excludeIndex: currentQuestionWordIndex)
+            decoyList.append(currentQuestionWord)
+            state.roundsWordList = decoyList
+            state.currentRoundWordCount = 1
+            stateChangeHandler?(.roundStarted(questionWord: currentQuestionWord.questionWord,
+                                              word: decoyList.first?.answerWord ?? "",
+                                              remainingRounds: state.remainingRoundCount))
+        }
+        
+    }
+
+    func sendNewWordIfPossible() {
+
+        guard let roundWordList = state.roundsWordList,
+            state.currentRoundWordCount + 1 <= roundWordList.count else {
+            startNewRoundIfPossible()
+            return
+        }
+
+        let nextWord = roundWordList[state.currentRoundWordCount]
+        state.currentRoundWordCount += 1
+        stateChangeHandler?(.newWordSent(word: nextWord.answerWord))
+    }
+
+    private func endGame() {
+        // TODO: To be implemented
+    }
 }

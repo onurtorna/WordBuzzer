@@ -39,6 +39,7 @@ class GameViewController: UIViewController, StoryboardLoadable {
         }
 
         configureViews()
+        viewModel.startNewRoundIfPossible()
     }
 
     func applyState(change: GameState.Change) {
@@ -84,7 +85,7 @@ class GameViewController: UIViewController, StoryboardLoadable {
 // MARK: - WordLabelDelegate
 extension GameViewController: WordLabelDelegate {
     func animationEnded() {
-        // TODO: To be implemented
+        viewModel.sendNewWordIfPossible()
     }
 }
 
