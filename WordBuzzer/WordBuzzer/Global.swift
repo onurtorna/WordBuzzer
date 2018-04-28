@@ -18,4 +18,8 @@ enum Global {
         }
     }
 
+    enum Game {
+        static let maximumDecoyWords = 10
+    }
+    
 }

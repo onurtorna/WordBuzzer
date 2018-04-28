@@ -54,4 +54,46 @@ class WordGenerator {
                     answerWord: answerWordValue)
     }
 
+    /// Picks a word from given list excluding objects in given index list
+    ///
+    /// - Parameters:
+    ///   - list: Input list
+    ///   - excludeIndex: Exclude indexes
+    /// - Returns: Random new word from the list
+    static func generateWord(from list: [Word],
+                             excluding excludeIndex: [Int]) -> Word {
+        var randomInt: Int
+
+        repeat {
+            randomInt = Int(arc4random_uniform(UInt32(list.count - 1)))
+        } while excludeIndex.contains(randomInt)
+
+        return list[randomInt]
+    }
+
+    /// Generates word list from given list without picking object at the exclude index
+    ///
+    /// - Parameters:
+    ///   - list: List to generate another list
+    ///   - excludeIndex: Index of an excluded object
+    /// - Returns: New word list
+    static func generateWordList(from list: [Word],
+                                 excludeIndex: Int = -1) -> [Word] {
+        
+        let maximumListSize = (list.count > Global.Game.maximumDecoyWords)
+            ? Global.Game.maximumDecoyWords : list.count
+        let listSize = Int(arc4random_uniform(UInt32(maximumListSize)))
+
+        var uniqueWordSet = Set<Word>()
+
+        while uniqueWordSet.count < listSize {
+            let randomIndex = Int(arc4random_uniform(UInt32(list.count)))
+            if randomIndex != excludeIndex {
+                uniqueWordSet.insert(list[randomIndex])
+            }
+        }
+
+        return Array(uniqueWordSet)
+    }
+
 }
