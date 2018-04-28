@@ -56,10 +56,16 @@ extension LandingPageViewController {
 // MARK: - SettingsSelectorViewDelegate
 extension LandingPageViewController: SettingsSelectorViewDelegate {
 
-    func startGame(playerCount: Int, roundCount: Int) {
+    func startGame(playerCount: Int,
+                   roundCount: Int,
+                   questionLanguage: LanguageKey,
+                   answerLanguage: LanguageKey) {
+
         let viewController = GameViewController.loadFromStoryboard()
         let viewModel = GameViewModel(playerCount: playerCount,
-                                      totalRoundCount: roundCount)
+                                      totalRoundCount: roundCount,
+                                      questionLanguage: questionLanguage,
+                                      answerLanguage: answerLanguage)
         viewController.viewModel = viewModel
         present(viewController, animated: true) {
             self.settingsView?.dismiss()

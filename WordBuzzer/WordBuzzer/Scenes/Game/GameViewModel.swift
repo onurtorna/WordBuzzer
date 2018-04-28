@@ -20,15 +20,26 @@ class GameState {
     /// Total number of players
     var playerCount: Int
 
+    /// Language of the question words
+    var questionLanguage: LanguageKey
+
+    /// Language of the possible answer words
+    var answerLanguage: LanguageKey
+
     /// Total number of rounds to play
     var totalRoundCount: Int
 
     /// Remaining round count
     var remainingRoundCount: Int
 
-    init(playerCount: Int, totalRoundCount: Int) {
+    init(playerCount: Int,
+         totalRoundCount: Int,
+         questionLanguage: LanguageKey,
+         answerLanguage: LanguageKey) {
         self.playerCount = playerCount
         self.totalRoundCount = totalRoundCount
+        self.questionLanguage = questionLanguage
+        self.answerLanguage = answerLanguage
         remainingRoundCount = totalRoundCount
     }
 }
@@ -41,8 +52,13 @@ class GameViewModel {
     /// State change handler
     var stateChangeHandler: ((GameState.Change) -> Void)?
 
-    init(playerCount: Int, totalRoundCount: Int) {
+    init(playerCount: Int,
+         totalRoundCount: Int,
+         questionLanguage: LanguageKey,
+         answerLanguage: LanguageKey) {
         state = GameState(playerCount: playerCount,
-                          totalRoundCount: totalRoundCount)
+                          totalRoundCount: totalRoundCount,
+                          questionLanguage: questionLanguage,
+                          answerLanguage: answerLanguage)
     }
 }

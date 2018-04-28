@@ -9,7 +9,10 @@
 import UIKit
 
 protocol SettingsSelectorViewDelegate {
-    func startGame(playerCount: Int, roundCount: Int)
+    func startGame(playerCount: Int,
+                   roundCount: Int,
+                   questionLanguage: LanguageKey,
+                   answerLanguage: LanguageKey)
 }
 
 final class SettingsSelectorView: UIView, NibLoadable {
@@ -66,9 +69,13 @@ final class SettingsSelectorView: UIView, NibLoadable {
             languageSelectButton.setTitle(title, for: .normal)
 
         case .gameStarted(let playerCount,
-                          let roundCount):
+                          let roundCount,
+                          let questionLanguage,
+                          let answerLanguage):
             delegate?.startGame(playerCount: playerCount,
-                                roundCount: roundCount)
+                                roundCount: roundCount,
+                                questionLanguage: questionLanguage,
+                                answerLanguage: answerLanguage)
         }
     }
 

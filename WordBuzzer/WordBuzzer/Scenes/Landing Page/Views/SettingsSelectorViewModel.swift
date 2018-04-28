@@ -14,18 +14,18 @@ final class SettingsSelectorState {
         case playerCountChanged(Int)
         case roundCountChanged(Int)
         case languageChanged((questionLanguage: LanguageKey, answerLanguage: LanguageKey))
-        case gameStarted(Int, Int)
+        case gameStarted(Int, Int, LanguageKey, LanguageKey)
     }
 
     /// Possible player count list
-    private var playerCountList = [2, 3, 4]
+    var playerCountList = [2, 3, 4]
 
     /// Possible round count list
-    private var roundCountList = [5, 10, 15, 20]
+    var roundCountList = [5, 10, 15, 20]
 
     /// Possible language pair tupples
-    private var languageList: [(LanguageKey, LanguageKey)] = [(.englishKey, .spanishKey),
-                                                                (.spanishKey, .englishKey)]
+    var languageList: [(LanguageKey, LanguageKey)] = [(.englishKey, .spanishKey),
+                                                      (.spanishKey, .englishKey)]
 
     /// Change closure
     var onChange: ((SettingsSelectorState.Change) -> Void)?
@@ -45,7 +45,7 @@ final class SettingsSelectorState {
     }
 
     /// Selected languages
-    private var selectedLanguage: (LanguageKey, LanguageKey) = (.englishKey, .spanishKey) {
+    var selectedLanguage: (LanguageKey, LanguageKey) = (.englishKey, .spanishKey) {
         didSet {
             onChange?(.languageChanged((questionLanguage: selectedLanguage.0,
                                         answerLanguage: selectedLanguage.1)))
@@ -136,9 +136,10 @@ final class SettingsSelectorViewModel {
 
     /// Starts the game
     func startGame() {
-        stateChangeHandler?(.gameStarted(state.selectedPlayerCountIndex,
-
-            state.selectedRoundCountIndex))
+        stateChangeHandler?(.gameStarted(state.playerCountList[state.selectedPlayerCountIndex],
+                                         state.roundCountList[state.selectedRoundCountIndex],
+                                         state.selectedLanguage.0,
+                                         state.selectedLanguage.1))
     }
 
     /// Publishes initial values for state variables
