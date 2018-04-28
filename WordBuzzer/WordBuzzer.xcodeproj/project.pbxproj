@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C26971A20952DF4004FF189 /* ButtonCustomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C26971920952DF4004FF189 /* ButtonCustomizer.swift */; };
 		0C2A56A32092EC5200D6C144 /* WordLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2A56A22092EC5200D6C144 /* WordLabel.swift */; };
 		0C3A3A7F2091AA8800940D7E /* SettingsSelectorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C3A3A7E2091AA8800940D7E /* SettingsSelectorView.xib */; };
 		0C3A3A812091AA9C00940D7E /* SettingsSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3A3A802091AA9C00940D7E /* SettingsSelectorView.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C26971920952DF4004FF189 /* ButtonCustomizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCustomizer.swift; sourceTree = "<group>"; };
 		0C2A56A22092EC5200D6C144 /* WordLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordLabel.swift; sourceTree = "<group>"; };
 		0C3A3A7E2091AA8800940D7E /* SettingsSelectorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsSelectorView.xib; sourceTree = "<group>"; };
 		0C3A3A802091AA9C00940D7E /* SettingsSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSelectorView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C26971820952DD4004FF189 /* Styling */ = {
+			isa = PBXGroup;
+			children = (
+				0C26971920952DF4004FF189 /* ButtonCustomizer.swift */,
+			);
+			path = Styling;
+			sourceTree = "<group>";
+		};
 		0C2A56A12092EC3A00D6C144 /* Reuseable Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +201,7 @@
 				0C3A3A822091AF9200940D7E /* Protocols */,
 				0C50A16C2090958300502751 /* Scenes */,
 				0C50A16B2090957500502751 /* Storyboards */,
+				0C26971820952DD4004FF189 /* Styling */,
 				0C50A18B2090A62500502751 /* Util */,
 			);
 			path = WordBuzzer;
@@ -422,6 +433,7 @@
 				0C50A1922090A9FD00502751 /* LanguageKey.swift in Sources */,
 				0C2A56A32092EC5200D6C144 /* WordLabel.swift in Sources */,
 				0C3A3A902091E71A00940D7E /* GameViewModel.swift in Sources */,
+				0C26971A20952DF4004FF189 /* ButtonCustomizer.swift in Sources */,
 				0C3A3A812091AA9C00940D7E /* SettingsSelectorView.swift in Sources */,
 				0C50A1902090A65B00502751 /* Word.swift in Sources */,
 				0C50A1942090AEAC00502751 /* FileReader.swift in Sources */,

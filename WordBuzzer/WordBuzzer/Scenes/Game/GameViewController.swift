@@ -78,6 +78,14 @@ class GameViewController: UIViewController, StoryboardLoadable {
 
     private func configureViews() {
         // TODO: To be implemented
+        ButtonCustomizer.applyBuzzerStyleTo(button: playerOneBuzzerButton,
+                                            color: UIColor.red)
+        ButtonCustomizer.applyBuzzerStyleTo(button: playerTwoBuzzerButton,
+                                            color: UIColor.blue)
+        ButtonCustomizer.applyBuzzerStyleTo(button: playerThreeBuzzerButton,
+                                            color: UIColor.purple)
+        ButtonCustomizer.applyBuzzerStyleTo(button: playerFourBuzzerButton,
+                                            color: UIColor.yellow)
     }
 
 }
