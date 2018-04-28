@@ -11,11 +11,17 @@ import Foundation
 class GameState {
 
     enum Change {
-        case gameStarted
-        case gameActivateStateChanged(Bool)
+        case roundStarted(questionWord: String,
+            word: String,
+            remainingRounds: Int)
+        case newWordSent(word: String)
+        case gameEnded
     }
 
     var onChange: ((GameState.Change) -> Void)?
+
+    /// Players' points respectively
+    var points: [Int] = [0, 0, 0, 0]
 
     /// Total number of players
     var playerCount: Int
@@ -34,6 +40,18 @@ class GameState {
 
     /// Word list to play with
     var wordList: [Word]?
+
+    /// Indexes of the asked words in word list
+    var askedWordIndexList: [Int] = []
+
+    /// Asked word in the current state
+    var currentQuestionWord: Word?
+
+    /// Current round's word list to ask. Last word is the answer.
+    var roundsWordList: [Word]?
+
+    /// Number of the words asked in the round
+    var currentRoundWordCount = 0
 
     init(playerCount: Int,
          totalRoundCount: Int,

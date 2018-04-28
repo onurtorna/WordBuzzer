@@ -30,7 +30,7 @@ class GameViewController: UIViewController, StoryboardLoadable {
 
     /// View model
     var viewModel: GameViewModel!
-
+    var wordLabel: WordLabel?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -43,12 +43,36 @@ class GameViewController: UIViewController, StoryboardLoadable {
 
     func applyState(change: GameState.Change) {
         // TODO: To be implemented
-        switch change {
-        case .gameStarted:
-            break
-        case .gameActivateStateChanged(let isGameActive):
-            break
+
+            switch change {
+            case .roundStarted(questionWord: let questionWord,
+                               word: let possibleAnswerWord,
+                               remainingRounds: let remainingRounds):
+                sendNewWord(with: possibleAnswerWord)
+                startGame(with: questionWord)
+
+            case .gameEnded:
+                break
+            case .newWordSent(let word):
+                sendNewWord(with: word)
+            }
+    }
+
+    private func sendNewWord(with text: String) {
+        // TODO: To be implemented
+        wordLabel = WordLabel(superViewBound: wordContainerView.bounds,
+                              text: text)
+        if let wordLabel = wordLabel {
+            wordLabel.delegate = self
+            wordContainerView.addSubview(wordLabel)
+            wordLabel.moveWithAnimation(superViewBound: wordContainerView.bounds)
         }
+    }
+
+    private func startGame(with questionWord: String) {
+
+        // TODO: Timer can be added here
+        askedWordLabel.text = questionWord
     }
 
     private func configureViews() {
