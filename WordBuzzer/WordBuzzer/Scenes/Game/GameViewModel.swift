@@ -32,6 +32,9 @@ class GameState {
     /// Remaining round count
     var remainingRoundCount: Int
 
+    /// Word list to play with
+    var wordList: [Word]?
+
     init(playerCount: Int,
          totalRoundCount: Int,
          questionLanguage: LanguageKey,
@@ -50,7 +53,16 @@ class GameViewModel {
     private var state: GameState
 
     /// State change handler
-    var stateChangeHandler: ((GameState.Change) -> Void)?
+    var stateChangeHandler: ((GameState.Change) -> Void)? {
+        get {
+            return state.onChange
+        }
+
+        set {
+            state.onChange = newValue
+            publishInitial()
+        }
+    }
 
     init(playerCount: Int,
          totalRoundCount: Int,
@@ -60,5 +72,18 @@ class GameViewModel {
                           totalRoundCount: totalRoundCount,
                           questionLanguage: questionLanguage,
                           answerLanguage: answerLanguage)
+    }
+
+    private func publishInitial() {
+        loadWords()
+    }
+
+    /// Loads words with file reader
+    private func loadWords() {
+        if let jsonList = FileReader.readJsonList(resource: Global.File.jsonFolderPath) {
+            state.wordList = WordGenerator.generateWordList(with: jsonList,
+                                                            questionLanguage: state.questionLanguage,
+                                                            answerLanguage: state.answerLanguage)
+        }
     }
 }
