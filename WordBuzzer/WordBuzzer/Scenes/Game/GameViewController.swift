@@ -55,7 +55,7 @@ class GameViewController: UIViewController, StoryboardLoadable {
         // TODO: To be implemented
 
             switch change {
-            case .startGame(removePlayerCount: let removePlayerCount):
+            case .gameStarted(removePlayerCount: let removePlayerCount):
                 for index in 0..<removePlayerCount {
                     removeablePlayerComponents[index].0.isHidden = true
                     removeablePlayerComponents[index].1.isHidden = true

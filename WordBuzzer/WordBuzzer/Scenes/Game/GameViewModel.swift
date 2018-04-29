@@ -11,7 +11,7 @@ import Foundation
 class GameState {
 
     enum Change {
-        case startGame(removePlayerCount: Int)
+        case gameStarted(removePlayerCount: Int)
         case roundStarted(questionWord: String,
             word: String,
             remainingRounds: Int)
@@ -96,7 +96,7 @@ class GameViewModel {
     /// Starts a new game
     func startNewGame() {
         let removePlayerCount = Global.Game.maximumPLayers - state.playerCount
-        stateChangeHandler?(.startGame(removePlayerCount: removePlayerCount))
+        stateChangeHandler?(.gameStarted(removePlayerCount: removePlayerCount))
         startNewRoundIfPossible()
     }
 
