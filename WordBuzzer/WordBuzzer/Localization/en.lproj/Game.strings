@@ -13,3 +13,4 @@
 "rematch" = "Rematch";
 "correct" = "Correct !";
 "wrong" = "Wrong !";
+"winner" = "Player #%@  won\nwith %@ points!";

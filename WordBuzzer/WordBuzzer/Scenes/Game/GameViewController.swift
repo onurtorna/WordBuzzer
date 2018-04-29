@@ -10,6 +10,10 @@ import UIKit
 
 class GameViewController: UIViewController, StoryboardLoadable {
 
+    private enum Constants {
+        static let feedbackTime: Double = 1.0
+    }
+
     /// Default storyboard name to conform to StoryboardLoadable protocol
     static let defaultStoryboardName = "Main"
 
@@ -54,7 +58,6 @@ class GameViewController: UIViewController, StoryboardLoadable {
     }
 
     func applyState(change: GameState.Change) {
-        // TODO: To be implemented
 
             switch change {
             case .gameStarted(removePlayerCount: let removePlayerCount):
@@ -75,21 +78,34 @@ class GameViewController: UIViewController, StoryboardLoadable {
             case .roundStarted(questionWord: let questionWord,
                                word: let possibleAnswerWord,
                                remainingRounds: let remainingRounds):
-
+                remainingRoundLabel.text = StringTable.landingPage.localized(key: "rounds") + " \(remainingRounds)"
                 wordLabel?.removeFromSuperview()
                 sendNewWord(with: possibleAnswerWord)
                 startGame(with: questionWord)
 
             case .wordGuessStatusChanged(let isGuessCorrect):
-                break
+                if isGuessCorrect {
+                    feedBackLabel.textColor = UIColor.green
+                    feedBackLabel.text = StringTable.game.localized(key: "correct")
+                } else {
+                    feedBackLabel.textColor = UIColor.red
+                    feedBackLabel.text = StringTable.game.localized(key: "wrong")
+                }
+
+                UIView.animate(withDuration: Constants.feedbackTime,
+                               animations: {
+                    self.feedBackLabel.alpha = 1
+                }) { (_) in
+                    self.feedBackLabel.alpha = 0
+                }
 
             case .newWordSent(let word):
                 sendNewWord(with: word)
 
             case .gameEnded(winnerNumber: let winnerNumber,
                             point: let winnerPoint):
-
-                let endGameFeedBack = "Player #\(winnerNumber) won \n with \(winnerPoint) points!"
+                let rawText = StringTable.game.localized(key: "winner")
+                let endGameFeedBack = String(format: rawText, "\(winnerNumber)", "\(winnerPoint)")
                 feedBackLabel.text = endGameFeedBack
                 handleVisibilities(isGameEnded: true)
                 endGame(with: endGameFeedBack)
@@ -150,6 +166,8 @@ class GameViewController: UIViewController, StoryboardLoadable {
                                             color: UIColor.purple)
         ButtonCustomizer.applyBuzzerStyleTo(button: playerFourBuzzerButton,
                                             color: UIColor.yellow)
+
+        feedBackLabel.alpha = 0
     }
 
 }
