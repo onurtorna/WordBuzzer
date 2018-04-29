@@ -11,6 +11,7 @@ import Foundation
 class GameState {
 
     enum Change {
+        case startGame(removePlayerCount: Int)
         case roundStarted(questionWord: String,
             word: String,
             remainingRounds: Int)
@@ -105,7 +106,14 @@ class GameViewModel {
         }
     }
 
-    func startNewRoundIfPossible() {
+    /// Starts a new game
+    func startNewGame() {
+        let removePlayerCount = Global.Game.maximumPLayers - state.playerCount
+        stateChangeHandler?(.startGame(removePlayerCount: removePlayerCount))
+        startNewRoundIfPossible()
+    }
+
+    private func startNewRoundIfPossible() {
 
         guard state.remainingRoundCount - 1 > 0,
             let wordList = state.wordList
@@ -129,9 +137,10 @@ class GameViewModel {
                                               word: decoyList.first?.answerWord ?? "",
                                               remainingRounds: state.remainingRoundCount))
         }
-        
+
     }
 
+    /// Sends a new word to users
     func sendNewWordIfPossible() {
 
         guard let roundWordList = state.roundsWordList,

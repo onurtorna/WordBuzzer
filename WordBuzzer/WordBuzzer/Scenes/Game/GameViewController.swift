@@ -28,6 +28,12 @@ class GameViewController: UIViewController, StoryboardLoadable {
 
     @IBOutlet private weak var wordContainerView: UIView!
 
+    /// Components to hide if there is less than maximum player number
+    private lazy var removeablePlayerComponents: [(UILabel, UIButton)] = {
+        return [(playerFourScoreLabel, playerFourBuzzerButton),
+                (playerThreeScoreLabel, playerThreeBuzzerButton)]
+    }()
+
     /// View model
     var viewModel: GameViewModel!
 
@@ -42,23 +48,29 @@ class GameViewController: UIViewController, StoryboardLoadable {
         }
 
         configureViews()
-        viewModel.startNewRoundIfPossible()
+        viewModel.startNewGame()
     }
 
     func applyState(change: GameState.Change) {
         // TODO: To be implemented
 
             switch change {
+            case .startGame(removePlayerCount: let removePlayerCount):
+                for index in 0..<removePlayerCount {
+                    removeablePlayerComponents[index].0.isHidden = true
+                    removeablePlayerComponents[index].1.isHidden = true
+                }
             case .roundStarted(questionWord: let questionWord,
                                word: let possibleAnswerWord,
                                remainingRounds: let remainingRounds):
                 sendNewWord(with: possibleAnswerWord)
                 startGame(with: questionWord)
 
-            case .gameEnded:
-                break
             case .newWordSent(let word):
                 sendNewWord(with: word)
+
+            case .gameEnded:
+                break
             }
     }
 
