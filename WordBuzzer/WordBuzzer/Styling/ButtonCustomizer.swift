@@ -18,5 +18,8 @@ class ButtonCustomizer {
         button.clipsToBounds = true
     }
 
+    static func applyBorderStyleTo(button: UIButton) {
+        button.layer.borderWidth = 2.0
+        button.layer.borderColor = UIColor.black.cgColor;
+    }
 }
-

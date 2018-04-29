@@ -148,7 +148,6 @@ class GameViewController: UIViewController, StoryboardLoadable {
     }
 
     private func configureViews() {
-        // TODO: To be implemented
         pauseButton.setTitle(StringTable.commons.localized(key: "pause"),
                              for: .normal)
         ButtonCustomizer.applyBuzzerStyleTo(button: playerOneBuzzerButton,

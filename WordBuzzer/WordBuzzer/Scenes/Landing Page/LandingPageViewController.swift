@@ -24,7 +24,10 @@ class LandingPageViewController: UIViewController {
     }
 
     private func configureViews() {
-        // TODO: To be implemented
+
+        ButtonCustomizer.applyBorderStyleTo(button: startGameButton)
+        ButtonCustomizer.applyBorderStyleTo(button: howToPlayButton)
+        ButtonCustomizer.applyBorderStyleTo(button: switchLanguageButton)
 
         setTitlesForViews()
     }

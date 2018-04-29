@@ -39,6 +39,12 @@ final class SettingsSelectorView: UIView, NibLoadable {
         viewModel.stateChangeHandler = { change in
             self.applyState(change: change)
         }
+
+        ButtonCustomizer.applyBorderStyleTo(button: playerCountSelectButton)
+        ButtonCustomizer.applyBorderStyleTo(button: roundCountSelectButton)
+        ButtonCustomizer.applyBorderStyleTo(button: languageSelectButton)
+        ButtonCustomizer.applyBorderStyleTo(button: cancelButton)
+        ButtonCustomizer.applyBorderStyleTo(button: startButton)
     }
 
     @discardableResult static func show(in viewController: UIViewController) -> SettingsSelectorView {
