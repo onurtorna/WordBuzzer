@@ -53,7 +53,6 @@ class GameViewController: UIViewController, StoryboardLoadable {
         }
 
         configureViews()
-        //DElay eklenebilir
         viewModel.startNewGame()
     }
 
@@ -61,7 +60,6 @@ class GameViewController: UIViewController, StoryboardLoadable {
 
             switch change {
             case .gameStarted(removePlayerCount: let removePlayerCount):
-                handleVisibilities(isGameEnded: false)
                 for index in 0..<removePlayerCount {
                     removeablePlayerComponents[index].0.isHidden = true
                     removeablePlayerComponents[index].1.isHidden = true
@@ -107,7 +105,6 @@ class GameViewController: UIViewController, StoryboardLoadable {
                 let rawText = StringTable.game.localized(key: "winner")
                 let endGameFeedBack = String(format: rawText, "\(winnerNumber)", "\(winnerPoint)")
                 feedBackLabel.text = endGameFeedBack
-                handleVisibilities(isGameEnded: true)
                 endGame(with: endGameFeedBack)
             }
     }
@@ -150,10 +147,6 @@ class GameViewController: UIViewController, StoryboardLoadable {
         show(alertController, sender: nil)
     }
 
-    private func handleVisibilities(isGameEnded: Bool) {
-        // TODO: To be implemented
-    }
-
     private func configureViews() {
         // TODO: To be implemented
         pauseButton.setTitle(StringTable.commons.localized(key: "pause"),
@@ -166,6 +159,11 @@ class GameViewController: UIViewController, StoryboardLoadable {
                                             color: UIColor.purple)
         ButtonCustomizer.applyBuzzerStyleTo(button: playerFourBuzzerButton,
                                             color: UIColor.yellow)
+
+        playerOneBuzzerButton.setTitle("#1", for: .normal)
+        playerTwoBuzzerButton.setTitle("#2", for: .normal)
+        playerThreeBuzzerButton.setTitle("#3", for: .normal)
+        playerFourBuzzerButton.setTitle("#4", for: .normal)
 
         feedBackLabel.alpha = 0
     }
