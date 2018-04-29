@@ -144,6 +144,13 @@ class GameViewModel {
         stateChangeHandler?(.wordGuessStatusChanged(isGuessCorrect))
         startNewRoundIfPossible()
     }
+
+    func restartGame() {
+        state.points = [0, 0, 0, 0]
+        state.remainingRoundCount = state.totalRoundCount
+        state.isGameActive = true
+        startNewGame()
+    }
 }
 
 // MARK: - Helpers

@@ -143,7 +143,7 @@ class GameViewController: UIViewController, StoryboardLoadable {
 
         let rematchAction = UIAlertAction(title: StringTable.game.localized(key: "rematch"),
                                           style: .default) { (_) in
-                                            // TODO: To be implemented
+                                            self.viewModel.restartGame()
         }
         alertController.addAction(exitAction)
         alertController.addAction(rematchAction)
