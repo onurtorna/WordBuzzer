@@ -60,9 +60,19 @@ class GameViewController: UIViewController, StoryboardLoadable {
                     removeablePlayerComponents[index].0.isHidden = true
                     removeablePlayerComponents[index].1.isHidden = true
                 }
+
+            case .pointsUpdated(let pointsList):
+                if pointsList.count > 3 {
+                    playerOneScoreLabel.text = "\(pointsList[0])"
+                    playerTwoScoreLabel.text = "\(pointsList[1])"
+                    playerThreeScoreLabel.text = "\(pointsList[2])"
+                    playerFourScoreLabel.text = "\(pointsList[3])"
+                }
+
             case .roundStarted(questionWord: let questionWord,
                                word: let possibleAnswerWord,
                                remainingRounds: let remainingRounds):
+
                 sendNewWord(with: possibleAnswerWord)
                 startGame(with: questionWord)
 

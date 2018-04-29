@@ -15,6 +15,7 @@ class GameState {
         case roundStarted(questionWord: String,
             word: String,
             remainingRounds: Int)
+        case pointsUpdated([Int])
         case newWordSent(word: String)
         case gameEnded
     }
@@ -97,6 +98,7 @@ class GameViewModel {
     func startNewGame() {
         let removePlayerCount = Global.Game.maximumPLayers - state.playerCount
         stateChangeHandler?(.gameStarted(removePlayerCount: removePlayerCount))
+        stateChangeHandler?(.pointsUpdated(state.points))
         startNewRoundIfPossible()
     }
 
@@ -104,9 +106,10 @@ class GameViewModel {
     func sendNewWordIfPossible() {
 
         guard let roundWordList = state.roundsWordList,
-            state.currentRoundWordCount + 1 <= roundWordList.count else {
-            startNewRoundIfPossible()
-            return
+            state.currentRoundWordCount + 1 <= roundWordList.count
+            else {
+                startNewRoundIfPossible()
+                return
         }
 
         let nextWord = roundWordList[state.currentRoundWordCount]
