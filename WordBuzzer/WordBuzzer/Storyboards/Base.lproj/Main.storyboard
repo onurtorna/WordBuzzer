@@ -155,12 +155,20 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mb2-Kx-TVu">
+                                        <rect key="frame" x="132.5" y="228.5" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="5dE-3N-Q7r" firstAttribute="centerY" secondItem="iCV-ua-Xf6" secondAttribute="centerY" id="abF-fD-ZFi"/>
                                     <constraint firstItem="5dE-3N-Q7r" firstAttribute="centerX" secondItem="iCV-ua-Xf6" secondAttribute="centerX" id="nHt-n0-2py"/>
+                                    <constraint firstItem="Mb2-Kx-TVu" firstAttribute="centerX" secondItem="iCV-ua-Xf6" secondAttribute="centerX" id="riJ-bd-IVO"/>
+                                    <constraint firstItem="5dE-3N-Q7r" firstAttribute="top" secondItem="Mb2-Kx-TVu" secondAttribute="bottom" constant="40" id="z7R-oT-rtv"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7A-yb-jbh">
@@ -206,6 +214,7 @@
                             <constraint firstItem="laD-X5-Fy3" firstAttribute="top" secondItem="Hwc-F1-eJt" secondAttribute="bottom" constant="10" id="CjJ-bu-2n5"/>
                             <constraint firstItem="C1n-cm-2Ep" firstAttribute="centerX" secondItem="Np2-wM-cdR" secondAttribute="centerX" constant="50" id="DGd-si-NYO"/>
                             <constraint firstItem="iCV-ua-Xf6" firstAttribute="bottom" secondItem="UiH-fM-8ua" secondAttribute="top" id="Ggl-dc-XPH"/>
+                            <constraint firstItem="tcd-gs-DZa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2zN-a0-JyI" secondAttribute="trailing" priority="750" constant="15" id="K8U-Wq-Vb7"/>
                             <constraint firstItem="oN1-04-8E4" firstAttribute="centerX" secondItem="IW7-rK-xm6" secondAttribute="centerX" id="Kd8-xW-qE5"/>
                             <constraint firstItem="Np2-wM-cdR" firstAttribute="bottom" secondItem="IW7-rK-xm6" secondAttribute="bottom" constant="5" id="NAj-nl-p8J"/>
                             <constraint firstItem="d7A-yb-jbh" firstAttribute="centerX" secondItem="UiH-fM-8ua" secondAttribute="centerX" id="PNJ-Mw-2PQ"/>
@@ -230,6 +239,7 @@
                     </view>
                     <connections>
                         <outlet property="askedWordLabel" destination="5dE-3N-Q7r" id="Smr-BP-4OR"/>
+                        <outlet property="feedBackLabel" destination="Mb2-Kx-TVu" id="bod-6O-9SY"/>
                         <outlet property="pauseButton" destination="C1n-cm-2Ep" id="WIe-ua-hvd"/>
                         <outlet property="playerFourBuzzerButton" destination="UiH-fM-8ua" id="p0D-vq-Jau"/>
                         <outlet property="playerFourScoreLabel" destination="d7A-yb-jbh" id="0Ed-dC-OP8"/>

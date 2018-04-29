@@ -19,7 +19,8 @@ class GameViewController: UIViewController, StoryboardLoadable {
     @IBOutlet private weak var playerFourScoreLabel: UILabel!
     @IBOutlet private weak var askedWordLabel: UILabel!
     @IBOutlet private weak var remainingRoundLabel: UILabel!
-    
+    @IBOutlet private weak var feedBackLabel: UILabel!
+
     @IBOutlet private weak var playerOneBuzzerButton: UIButton!
     @IBOutlet private weak var playerTwoBuzzerButton: UIButton!
     @IBOutlet private weak var playerThreeBuzzerButton: UIButton!
@@ -57,6 +58,7 @@ class GameViewController: UIViewController, StoryboardLoadable {
 
             switch change {
             case .gameStarted(removePlayerCount: let removePlayerCount):
+                handleVisibilities(isGameEnded: false)
                 for index in 0..<removePlayerCount {
                     removeablePlayerComponents[index].0.isHidden = true
                     removeablePlayerComponents[index].1.isHidden = true
@@ -78,16 +80,23 @@ class GameViewController: UIViewController, StoryboardLoadable {
                 sendNewWord(with: possibleAnswerWord)
                 startGame(with: questionWord)
 
+            case .wordGuessStatusChanged(let isGuessCorrect):
+                break
+
             case .newWordSent(let word):
                 sendNewWord(with: word)
 
-            case .gameEnded:
-                break
+            case .gameEnded(winnerNumber: let winnerNumber,
+                            point: let winnerPoint):
+
+                let endGameFeedBack = "Player #\(winnerNumber) won \n with \(winnerPoint) points!"
+                feedBackLabel.text = endGameFeedBack
+                handleVisibilities(isGameEnded: true)
+                endGame(with: endGameFeedBack)
             }
     }
 
     private func sendNewWord(with text: String) {
-        // TODO: To be implemented
         wordLabel = WordLabel(superViewBound: wordContainerView.bounds,
                               text: text)
         if let wordLabel = wordLabel {
@@ -101,6 +110,32 @@ class GameViewController: UIViewController, StoryboardLoadable {
 
         // TODO: Timer can be added here
         askedWordLabel.text = questionWord
+    }
+
+    private func endGame(with feedback: String) {
+
+        wordLabel?.removeFromSuperview()
+
+        let alertController = UIAlertController(title: StringTable.game.localized(key: "gameOver"),
+                                                message: feedback,
+                                                preferredStyle: .alert)
+
+        let exitAction = UIAlertAction(title: StringTable.game.localized(key: "exitGame"),
+                                       style: .destructive) { (_) in
+                                        self.dismiss(animated: true, completion: nil)
+        }
+
+        let rematchAction = UIAlertAction(title: StringTable.game.localized(key: "rematch"),
+                                          style: .default) { (_) in
+                                            // TODO: To be implemented
+        }
+        alertController.addAction(exitAction)
+        alertController.addAction(rematchAction)
+        show(alertController, sender: nil)
+    }
+
+    private func handleVisibilities(isGameEnded: Bool) {
+        // TODO: To be implemented
     }
 
     private func configureViews() {
@@ -117,13 +152,6 @@ class GameViewController: UIViewController, StoryboardLoadable {
                                             color: UIColor.yellow)
     }
 
-    @IBAction func numberOneTapped(_ sender: Any) {
-        let word = WordLabel(superViewBound: wordContainerView.bounds,
-                             text: "Hello Hello World")
-        word.delegate = self
-        wordContainerView.addSubview(word)
-        word.moveWithAnimation(superViewBound: wordContainerView.bounds)
-    }
 }
 
 // MARK: - WordLabelDelegate

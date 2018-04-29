@@ -9,3 +9,7 @@
 "exitGame" = "Exit Game";
 "resume" = "Resume";
 "gamePaused" = "The Game is Paused";
+"gameOver" = "Game is Over";
+"rematch" = "Rematch";
+"correct" = "Correct !";
+"wrong" = "Wrong !";

@@ -16,8 +16,9 @@ class GameState {
             word: String,
             remainingRounds: Int)
         case pointsUpdated([Int])
+        case wordGuessStatusChanged(Bool)
         case newWordSent(word: String)
-        case gameEnded
+        case gameEnded(winnerNumber: Int, point: Int)
     }
 
     var onChange: ((GameState.Change) -> Void)?
@@ -58,6 +59,9 @@ class GameState {
 
     /// Number of the words asked in the round
     var currentRoundWordCount = 0
+
+    // Determines if the game is active
+    var isGameActive = true
 
     init(playerCount: Int,
          totalRoundCount: Int,
@@ -110,7 +114,8 @@ class GameViewModel {
     func sendNewWordIfPossible() {
 
         guard let roundWordList = state.roundsWordList,
-            state.currentRoundWordCount + 1 <= roundWordList.count
+            state.currentRoundWordCount + 1 <= roundWordList.count,
+            state.isGameActive
             else {
                 startNewRoundIfPossible()
                 return
@@ -127,12 +132,16 @@ class GameViewModel {
     func wordGuessed(by playerNumber: Int) {
         let playerIndex = playerNumber - 1
         let currentRoundWordIndex = state.currentRoundWordCount - 1
+        let isGuessCorrect: Bool
         if state.roundsWordList?[currentRoundWordIndex] == state.currentQuestionWord {
             state.points[playerIndex] += Global.Game.correctAnswerPoint
+            isGuessCorrect = true
         } else {
             state.points[playerIndex] += Global.Game.wrongAnswerPoint
+            isGuessCorrect = false
         }
 
+        stateChangeHandler?(.wordGuessStatusChanged(isGuessCorrect))
         startNewRoundIfPossible()
     }
 }
@@ -156,7 +165,7 @@ private extension GameViewModel {
     /// Starts a new round by sending a question if possible, ends game otherwise
     func startNewRoundIfPossible() {
 
-        guard state.remainingRoundCount - 1 > 0,
+        guard state.remainingRoundCount - 1 >= 0,
             let wordList = state.wordList
             else {
                 endGame()
@@ -182,6 +191,12 @@ private extension GameViewModel {
     }
 
     func endGame() {
-        // TODO: To be implemented
+        guard state.isGameActive else { return }
+        state.isGameActive = false
+        if let maximumNumber = state.points.max(),
+            let winnerIndex = state.points.index(of: maximumNumber) {
+            stateChangeHandler?(.gameEnded(winnerNumber: winnerIndex + 1,
+                                           point: maximumNumber))
+        }
     }
 }
