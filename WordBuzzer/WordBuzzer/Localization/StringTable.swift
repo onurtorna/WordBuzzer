@@ -13,6 +13,7 @@ enum StringTable: String {
     case commons = "Commons"
     case game = "Game"
     case landingPage = "LandingPage"
+    case howToPlay = "HowToPlay"
 
     /// Returns localized key with the current selected app language
     ///

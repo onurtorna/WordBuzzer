@@ -1,0 +1,10 @@
+/* 
+  HowToPlay.strings
+  WordBuzzer
+
+  Created by Onur Torna on 30/04/18.
+  Copyright © 2018 Onur Torna. All rights reserved.
+*/
+
+"howToPlay" = "How To Play";
+"instructions" = "To be explained";

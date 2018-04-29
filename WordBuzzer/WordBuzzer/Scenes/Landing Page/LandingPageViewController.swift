@@ -40,7 +40,8 @@ class LandingPageViewController: UIViewController {
 extension LandingPageViewController {
 
     @IBAction private func didTapHowToPlayButton(_ sender: UIButton) {
-        // TODO: To be implemented
+        let howToPlayViewController = HowToPlayViewController.loadFromStoryboard()
+        showDetailViewController(howToPlayViewController, sender: nil)
     }
 
     @IBAction private func didTapStartGameButton(_ sender: UIButton) {

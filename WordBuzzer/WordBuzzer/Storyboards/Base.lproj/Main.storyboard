@@ -76,6 +76,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--How To Play View Controller-->
+        <scene sceneID="MC5-sN-gSP">
+            <objects>
+                <viewController storyboardIdentifier="HowToPlayViewController" id="ov8-WT-7xM" customClass="HowToPlayViewController" customModule="WordBuzzer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jhr-58-U6M">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjg-bP-q5H">
+                                <rect key="frame" x="20" y="40" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="OoB-pC-xrx"/>
+                                    <constraint firstAttribute="width" constant="50" id="dEw-LZ-fbb"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="ov8-WT-7xM" eventType="touchUpInside" id="EGT-g4-DZf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGz-XM-9IR">
+                                <rect key="frame" x="187.5" y="105" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4VS-Fw-UKD">
+                                <rect key="frame" x="15" y="125" width="345" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cGz-XM-9IR" firstAttribute="centerX" secondItem="vut-47-aW1" secondAttribute="centerX" id="6cz-BN-IRp"/>
+                            <constraint firstItem="vjg-bP-q5H" firstAttribute="leading" secondItem="vut-47-aW1" secondAttribute="leading" constant="20" id="7bW-rE-a5Y"/>
+                            <constraint firstItem="cGz-XM-9IR" firstAttribute="top" secondItem="vjg-bP-q5H" secondAttribute="bottom" constant="15" id="LZ1-ha-awF"/>
+                            <constraint firstItem="4VS-Fw-UKD" firstAttribute="leading" secondItem="vut-47-aW1" secondAttribute="leading" constant="15" id="Peq-Y3-Ave"/>
+                            <constraint firstItem="vut-47-aW1" firstAttribute="trailing" secondItem="4VS-Fw-UKD" secondAttribute="trailing" constant="15" id="VYz-jd-OVt"/>
+                            <constraint firstItem="vjg-bP-q5H" firstAttribute="top" secondItem="vut-47-aW1" secondAttribute="top" constant="20" id="Z7I-np-gpX"/>
+                            <constraint firstItem="4VS-Fw-UKD" firstAttribute="top" secondItem="cGz-XM-9IR" secondAttribute="bottom" constant="20" id="iZv-Gu-LBP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vut-47-aW1"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="vjg-bP-q5H" id="CIN-yN-tf2"/>
+                        <outlet property="instructionsLabel" destination="4VS-Fw-UKD" id="ohm-Dj-hyD"/>
+                        <outlet property="titleLabel" destination="cGz-XM-9IR" id="FRi-4t-GbU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q50-g5-CVc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1526" y="541"/>
+        </scene>
         <!--Game View Controller-->
         <scene sceneID="aCU-5q-ZHd">
             <objects>
@@ -205,7 +258,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="IW7-rK-xm6" firstAttribute="top" secondItem="oN1-04-8E4" secondAttribute="bottom" constant="10" id="3cH-hp-yNb"/>
                             <constraint firstItem="o1F-dB-iyq" firstAttribute="top" secondItem="2zN-a0-JyI" secondAttribute="bottom" constant="10" id="9C6-g1-ef0"/>

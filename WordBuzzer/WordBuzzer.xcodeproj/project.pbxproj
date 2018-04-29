@@ -36,6 +36,8 @@
 		0C50A1922090A9FD00502751 /* LanguageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C50A1912090A9FD00502751 /* LanguageKey.swift */; };
 		0C50A1942090AEAC00502751 /* FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C50A1932090AEAC00502751 /* FileReader.swift */; };
 		0C50A1962090B00600502751 /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = 0C50A1952090B00600502751 /* words.json */; };
+		0C582F66209673CE00D5C00C /* HowToPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C582F65209673CE00D5C00C /* HowToPlayViewController.swift */; };
+		0C582F69209674C600D5C00C /* HowToPlay.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C582F6B209674C600D5C00C /* HowToPlay.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +96,9 @@
 		0C50A1912090A9FD00502751 /* LanguageKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageKey.swift; sourceTree = "<group>"; };
 		0C50A1932090AEAC00502751 /* FileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReader.swift; sourceTree = "<group>"; };
 		0C50A1952090B00600502751 /* words.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
+		0C582F65209673CE00D5C00C /* HowToPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayViewController.swift; sourceTree = "<group>"; };
+		0C582F6A209674C600D5C00C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/HowToPlay.strings; sourceTree = "<group>"; };
+		0C582F6C209674C700D5C00C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/HowToPlay.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				0C3A3A8C2091E37000940D7E /* Game */,
+				0C582F64209673B600D5C00C /* How to Play */,
 				0C50A16F2090965000502751 /* Landing Page */,
 			);
 			path = Scenes;
@@ -257,6 +263,7 @@
 				0C3A3A952091E96A00940D7E /* Commons.strings */,
 				0C50A18620909F5900502751 /* LandingPage.strings */,
 				0C26971F209534C7004FF189 /* Game.strings */,
+				0C582F6B209674C600D5C00C /* HowToPlay.strings */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -296,6 +303,14 @@
 				0C50A18F2090A65B00502751 /* Word.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0C582F64209673B600D5C00C /* How to Play */ = {
+			isa = PBXGroup;
+			children = (
+				0C582F65209673CE00D5C00C /* HowToPlayViewController.swift */,
+			);
+			path = "How to Play";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -410,6 +425,7 @@
 				0C3A3A932091E96A00940D7E /* Commons.strings in Resources */,
 				0C50A1962090B00600502751 /* words.json in Resources */,
 				0C26971D209534C7004FF189 /* Game.strings in Resources */,
+				0C582F69209674C600D5C00C /* HowToPlay.strings in Resources */,
 				0C3A3A7F2091AA8800940D7E /* SettingsSelectorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,6 +465,7 @@
 				0C3A3A842091AFA700940D7E /* NibLoadable.swift in Sources */,
 				0C50A17120909AB500502751 /* LocalizationManager.swift in Sources */,
 				0C50A13E2090923D00502751 /* AppDelegate.swift in Sources */,
+				0C582F66209673CE00D5C00C /* HowToPlayViewController.swift in Sources */,
 				0C50A18D2090A63900502751 /* WordGenerator.swift in Sources */,
 				0C50A18A2090A52B00502751 /* Global.swift in Sources */,
 				0C3A3A8B2091BA0B00940D7E /* SettingsSelectorViewModel.swift in Sources */,
@@ -530,6 +547,15 @@
 				0C50A18720909F5B00502751 /* es */,
 			);
 			name = LandingPage.strings;
+			sourceTree = "<group>";
+		};
+		0C582F6B209674C600D5C00C /* HowToPlay.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0C582F6A209674C600D5C00C /* en */,
+				0C582F6C209674C700D5C00C /* es */,
+			);
+			name = HowToPlay.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
