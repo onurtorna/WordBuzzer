@@ -93,19 +93,6 @@ class GameViewModel {
                           answerLanguage: answerLanguage)
     }
 
-    private func publishInitial() {
-        loadWords()
-    }
-
-    /// Loads words with file reader
-    private func loadWords() {
-        if let jsonList = FileReader.readJsonList(resource: Global.File.jsonFolderPath) {
-            state.wordList = WordGenerator.generateWordList(with: jsonList,
-                                                            questionLanguage: state.questionLanguage,
-                                                            answerLanguage: state.answerLanguage)
-        }
-    }
-
     /// Starts a new game
     func startNewGame() {
         let removePlayerCount = Global.Game.maximumPLayers - state.playerCount
@@ -113,7 +100,40 @@ class GameViewModel {
         startNewRoundIfPossible()
     }
 
-    private func startNewRoundIfPossible() {
+    /// Sends a new word to users if possible, tries to start new round otherwise
+    func sendNewWordIfPossible() {
+
+        guard let roundWordList = state.roundsWordList,
+            state.currentRoundWordCount + 1 <= roundWordList.count else {
+            startNewRoundIfPossible()
+            return
+        }
+
+        let nextWord = roundWordList[state.currentRoundWordCount]
+        state.currentRoundWordCount += 1
+        stateChangeHandler?(.newWordSent(word: nextWord.answerWord))
+    }
+
+}
+
+// MARK: - Helpers
+private extension GameViewModel {
+
+    func publishInitial() {
+        loadWords()
+    }
+
+    /// Loads words with file reader
+    func loadWords() {
+        if let jsonList = FileReader.readJsonList(resource: Global.File.jsonFolderPath) {
+            state.wordList = WordGenerator.generateWordList(with: jsonList,
+                                                            questionLanguage: state.questionLanguage,
+                                                            answerLanguage: state.answerLanguage)
+        }
+    }
+
+    /// Starts a new round by sending a question if possible, ends game otherwise
+    func startNewRoundIfPossible() {
 
         guard state.remainingRoundCount - 1 > 0,
             let wordList = state.wordList
@@ -138,20 +158,6 @@ class GameViewModel {
                                               remainingRounds: state.remainingRoundCount))
         }
 
-    }
-
-    /// Sends a new word to users
-    func sendNewWordIfPossible() {
-
-        guard let roundWordList = state.roundsWordList,
-            state.currentRoundWordCount + 1 <= roundWordList.count else {
-            startNewRoundIfPossible()
-            return
-        }
-
-        let nextWord = roundWordList[state.currentRoundWordCount]
-        state.currentRoundWordCount += 1
-        stateChangeHandler?(.newWordSent(word: nextWord.answerWord))
     }
 
     private func endGame() {

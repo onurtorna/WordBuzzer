@@ -115,22 +115,24 @@ extension GameViewController: WordLabelDelegate {
 }
 
 // MARK: - Actions
-extension GameViewController {
+private extension GameViewController {
     // TODO: To be implemented
-    @IBAction private func playerOneBuzzerButtonTapped(_ sender: Any) {
+    @IBAction func playerOneBuzzerButtonTapped(_ sender: Any) {
     }
 
-    @IBAction private func playerTwoBuzzerButtonTapped(_ sender: Any) {
+    @IBAction func playerTwoBuzzerButtonTapped(_ sender: Any) {
+        wordLabel?.layer.pause()
     }
 
-    @IBAction private func playerThreeBuzzerButtonTapped(_ sender: Any) {
+    @IBAction func playerThreeBuzzerButtonTapped(_ sender: Any) {
+
     }
 
-    @IBAction private func playerFourBuzzerButtonTapped(_ sender: Any) {
+    @IBAction func playerFourBuzzerButtonTapped(_ sender: Any) {
         
     }
 
-    @IBAction private func pauseButtonTapped(_ sender: Any) {
+    @IBAction func pauseButtonTapped(_ sender: Any) {
 
         wordLabel?.layer.pause()
         let alertController = UIAlertController.init(title: StringTable.game.localized(key: "gamePaused"),
