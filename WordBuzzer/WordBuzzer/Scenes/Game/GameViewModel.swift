@@ -23,7 +23,11 @@ class GameState {
     var onChange: ((GameState.Change) -> Void)?
 
     /// Players' points respectively
-    var points: [Int] = [0, 0, 0, 0]
+    var points: [Int] = [0, 0, 0, 0] {
+        didSet {
+            onChange?(.pointsUpdated(points))
+        }
+    }
 
     /// Total number of players
     var playerCount: Int
@@ -117,6 +121,20 @@ class GameViewModel {
         stateChangeHandler?(.newWordSent(word: nextWord.answerWord))
     }
 
+    /// Triggers when current shown word is guessed as the correct answer
+    ///
+    /// - Parameter playerNumber: Guessed player number
+    func wordGuessed(by playerNumber: Int) {
+        let playerIndex = playerNumber - 1
+        let currentRoundWordIndex = state.currentRoundWordCount - 1
+        if state.roundsWordList?[currentRoundWordIndex] == state.currentQuestionWord {
+            state.points[playerIndex] += Global.Game.correctAnswerPoint
+        } else {
+            state.points[playerIndex] += Global.Game.wrongAnswerPoint
+        }
+
+        startNewRoundIfPossible()
+    }
 }
 
 // MARK: - Helpers
@@ -163,7 +181,7 @@ private extension GameViewModel {
 
     }
 
-    private func endGame() {
+    func endGame() {
         // TODO: To be implemented
     }
 }

@@ -19,6 +19,8 @@ enum Global {
     }
 
     enum Game {
+        static let correctAnswerPoint = 10
+        static let wrongAnswerPoint = -5
         static let maximumDecoyWords = 10
         static let maximumPLayers = 4
     }

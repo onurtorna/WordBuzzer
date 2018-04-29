@@ -48,6 +48,7 @@ class GameViewController: UIViewController, StoryboardLoadable {
         }
 
         configureViews()
+        //DElay eklenebilir
         viewModel.startNewGame()
     }
 
@@ -73,6 +74,7 @@ class GameViewController: UIViewController, StoryboardLoadable {
                                word: let possibleAnswerWord,
                                remainingRounds: let remainingRounds):
 
+                wordLabel?.removeFromSuperview()
                 sendNewWord(with: possibleAnswerWord)
                 startGame(with: questionWord)
 
@@ -115,6 +117,13 @@ class GameViewController: UIViewController, StoryboardLoadable {
                                             color: UIColor.yellow)
     }
 
+    @IBAction func numberOneTapped(_ sender: Any) {
+        let word = WordLabel(superViewBound: wordContainerView.bounds,
+                             text: "Hello Hello World")
+        word.delegate = self
+        wordContainerView.addSubview(word)
+        word.moveWithAnimation(superViewBound: wordContainerView.bounds)
+    }
 }
 
 // MARK: - WordLabelDelegate
@@ -126,20 +135,21 @@ extension GameViewController: WordLabelDelegate {
 
 // MARK: - Actions
 private extension GameViewController {
-    // TODO: To be implemented
+    
     @IBAction func playerOneBuzzerButtonTapped(_ sender: Any) {
+        viewModel.wordGuessed(by: 1)
     }
 
     @IBAction func playerTwoBuzzerButtonTapped(_ sender: Any) {
-        wordLabel?.layer.pause()
+        viewModel.wordGuessed(by: 2)
     }
 
     @IBAction func playerThreeBuzzerButtonTapped(_ sender: Any) {
-
+        viewModel.wordGuessed(by: 3)
     }
 
     @IBAction func playerFourBuzzerButtonTapped(_ sender: Any) {
-        
+        viewModel.wordGuessed(by: 4)
     }
 
     @IBAction func pauseButtonTapped(_ sender: Any) {
