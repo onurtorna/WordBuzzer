@@ -200,7 +200,10 @@ private extension GameViewModel {
     func endGame() {
         guard state.isGameActive else { return }
         state.isGameActive = false
-        if let maximumNumber = state.points.max(),
+
+        // Do not include players that are not currently playing
+        let subPoints = state.points[0..<state.playerCount]
+        if let maximumNumber = subPoints.max(),
             let winnerIndex = state.points.index(of: maximumNumber) {
             stateChangeHandler?(.gameEnded(winnerNumber: winnerIndex + 1,
                                            point: maximumNumber))
