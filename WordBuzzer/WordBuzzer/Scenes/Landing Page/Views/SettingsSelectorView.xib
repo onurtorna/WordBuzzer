@@ -24,6 +24,7 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b07-WL-Bo8">
                                     <rect key="frame" x="0.0" y="0.0" width="275" height="50"/>
+                                    <accessibility key="accessibilityConfiguration" identifier="playerCountSelectButton"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="63J-yJ-axN"/>
                                     </constraints>
@@ -34,6 +35,7 @@
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHf-oM-mSz">
                                     <rect key="frame" x="0.0" y="50" width="275" height="50"/>
+                                    <accessibility key="accessibilityConfiguration" identifier="languageSelectButton"/>
                                     <state key="normal" title="Language Select"/>
                                     <connections>
                                         <action selector="languageSelectButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="JQz-We-OAO"/>
@@ -41,6 +43,7 @@
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1z-Jz-1BD">
                                     <rect key="frame" x="0.0" y="100" width="275" height="50"/>
+                                    <accessibility key="accessibilityConfiguration" identifier="roundSelectButton"/>
                                     <state key="normal" title="Round Select"/>
                                     <connections>
                                         <action selector="roundCountSelectButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="Cyk-i9-Rcv"/>
@@ -50,6 +53,7 @@
                         </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21W-yU-pbT">
                             <rect key="frame" x="0.0" y="150" width="137.5" height="50"/>
+                            <accessibility key="accessibilityConfiguration" identifier="cancelButton"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="Nqm-vc-Ehq"/>
                             </constraints>
@@ -60,6 +64,7 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whM-52-chg">
                             <rect key="frame" x="137.5" y="150" width="137.5" height="50"/>
+                            <accessibility key="accessibilityConfiguration" identifier="startButton"/>
                             <state key="normal" title="Start"/>
                             <connections>
                                 <action selector="startButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="PpM-0U-pRL"/>
@@ -83,6 +88,7 @@
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <accessibility key="accessibilityConfiguration" identifier="settingsSelectorView"/>
             <constraints>
                 <constraint firstItem="iOI-ls-3mL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="JwY-8Y-Owe"/>
                 <constraint firstItem="iOI-ls-3mL" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="RmH-UW-4oe"/>
